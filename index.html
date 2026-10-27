@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANAVIP RD - Asociación Nacional de Pequeños y Medianos Productores Avícolas Dominicana</title>
+    <!-- FontAwesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-green: #1b4d3e;
+            --secondary-green: #2e7d32;
+            --accent-gold: #f4c430;
+            --dark-text: #333333;
+            --light-bg: #f9fbf9;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: var(--dark-text);
+            background-color: var(--light-bg);
+            line-height: 1.6;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-container img {
+            height: 55px;
+            width: 55px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid var(--primary-green);
+        }
+
+        .logo-text {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--primary-green);
+            line-height: 1.2;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-green);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(27, 77, 62, 0.85), rgba(46, 125, 50, 0.85)), url('https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            color: var(--white);
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-gold);
+            color: var(--dark-text);
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #d4a726;
+            transform: translateY(-2px);
+        }
+
+        /* Sections */
+        section {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--primary-green);
+            font-size: 2rem;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-gold);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .card h3 {
+            color: var(--primary-green);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        /* Social / Contact Section */
+        .social-section {
+            background-color: var(--white);
+            text-align: center;
+            padding: 60px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-top: 50px;
+        }
+
+        .instagram-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #df5850 45%, #d6249f 60%, #285AEB 90%);
+            color: var(--white);
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: opacity 0.3s, transform 0.3s;
+        }
+
+        .instagram-btn:hover {
+            opacity: 0.9;
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-green);
+            color: var(--white);
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 80px;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER / NAVEGACIÓN -->
+    <header>
+        <div class="navbar">
+            <div class="logo-container">
+                <!-- Asegúrate de guardar la imagen de tu logo con el nombre 'logo.jpg' en la misma carpeta -->
+                <img src="logo.jpg" alt="Logo ANAVIP RD">
+                <div class="logo-text">ANAVIP RD <br><span style="font-size: 0.75rem; font-weight: normal;">República Dominicana</span></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#quienes-somos">Quiénes Somos</a></li>
+                <li><a href="#sector">Sector Avícola</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="inicio" class="hero" style="margin:0; max-width:none;">
+        <h1>Unidos por el Desarrollo Sostenible de la Avicultura Dominicana</h1>
+        <p>Asociación Nacional de Pequeños y Medianos Productores Avícolas Dominicana</p>
+        <a href="#quienes-somos" class="btn">Conoce Más</a>
+    </section>
+
+    <!-- QUIÉNES SOMOS -->
+    <section id="quienes-somos">
+        <h2 class="section-title">¿Quiénes Somos?</h2>
+        <div class="grid-2">
+            <div class="card">
+                <h3>Nuestra Misión</h3>
+                <p>Agrupar, representar y defender los intereses de los pequeños y medianos productores avícolas de la República Dominicana, fomentando la competitividad, la innovación tecnológica y las buenas prácticas en pro de la seguridad alimentaria nacional.</p>
+            </div>
+            <div class="card">
+                <h3>Desarrollo Sostenible</h3>
+                <p>Trabajamos unidos para optimizar la producción avícola nacional mediante el intercambio de experiencias, optimización de recursos y un firme compromiso con el medio ambiente y la economía del país.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTOR AVÍCOLA -->
+    <section id="sector">
+        <h2 class="section-title">Sector Avícola</h2>
+        <div class="card" style="text-align: center; max-width: 800px; margin: 0 auto;">
+            <h3>Impulsando el Progreso Nacional</h3>
+            <p>La avicultura representa uno de los pilares fundamentales de la alimentación y la economía dominicana. Desde ANAVIP RD impulsamos iniciativas técnicas, normativas y de capacitación constante para garantizar la máxima calidad en la producción de pollo y huevo fresco para las familias dominicanas.</p>
+        </div>
+    </section>
+
+    <!-- CONTACTO / INSTAGRAM -->
+    <section id="contacto">
+        <div class="social-section">
+            <h2 class="section-title" style="margin-bottom: 20px;">Conéctate con Nosotros</h2>
+            <p style="margin-bottom: 20px; color: #555;">Sigue todas nuestras novedades, comunicados oficiales y actividades a través de nuestra cuenta oficial de Instagram.</p>
+            <a href="https://www.instagram.com/anaviprd" target="_blank" class="instagram-btn">
+                <i class="fab fa-instagram" style="font-size: 1.5rem;"></i> @anaviprd
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 ANAVIP RD - Asociación Nacional de Pequeños y Medianos Productores Avícolas Dominicana. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
